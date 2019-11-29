@@ -1,5 +1,5 @@
 {% set name = "dagster_datadog" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 52c938ab1183a9997531d2967fd260d23e595bccb9b233d475f53c3a26cb88bc
+  sha256: 638322b711e6f88a0bde16dde39d0c358b5211796e9c2481068c6a0d74977ecf
 
 build:
   number: 0
@@ -22,7 +22,7 @@ requirements:
   run:
     - python
     - dagster {{ version }}.*
-    - datadog 0.28.*
+    - datadog
 
 test:
   imports:
@@ -37,4 +37,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - xhochy
+    - conda-forge/dagster
