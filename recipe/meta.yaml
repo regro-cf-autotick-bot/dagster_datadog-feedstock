@@ -22,7 +22,7 @@ requirements:
   run:
     - python
     - dagster {{ version }}.*
-    - datadog 0.28.*
+    - datadog
 
 test:
   imports:
@@ -37,4 +37,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - xhochy
+    - conda-forge/dagster
