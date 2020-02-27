@@ -1,18 +1,18 @@
 {% set name = "dagster_datadog" %}
-{% set version = "0.6.5" %}
+{% set version = "0.7.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 638322b711e6f88a0bde16dde39d0c358b5211796e9c2481068c6a0d74977ecf
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
+  sha256: b68fccd9c8dca2a85e0edc2042bf4280e1562ce8cb640cf699bc2b37a80a6779
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -29,11 +29,11 @@ test:
     - dagster_datadog
 
 about:
-  home: "https://github.com/dagster-io/dagster/tree/master/python_modules/libraries/dagster-datadog"
+  home: https://github.com/dagster-io/dagster/tree/master/python_modules/libraries/dagster-datadog
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: "Package for datadog Dagster framework components."
+  summary: Package for datadog Dagster framework components.
 
 extra:
   recipe-maintainers:
